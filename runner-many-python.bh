@@ -1,0 +1,64 @@
+#!/bin/sh
+
+
+
+
+
+
+
+
+# FIRST PART
+printf '\n      Flag 1: first-code \n'
+
+pids=""
+
+for ind in {4..6} # 0..27
+do
+
+  python3 first-code.py $ind &
+  sleep 0.1   
+ 
+  pids="$pids $!"
+   
+done
+
+
+echo $pids    # just to see
+wait $pids    # wait for all pids-jobs are completed.
+
+
+
+
+
+
+
+
+# SECOND PART
+printf '\n      Flag 2: second-code \n'
+
+pids2=""
+
+for ind in {4..6} # 0..27
+do
+
+  python3 second-code.py $ind &
+  sleep 0.01
+
+  pids2="$pids2 $!"
+
+done
+
+echo $pids2    # just to see
+wait $pids2    # wait for all pids-jobs are completed.
+
+
+
+
+
+
+
+
+
+printf '\n      Flag 3: end of bash runner'
+
+#See stackoverflow.com/questions/356100/how-to-wait-in-bash-for-several-subprocesses-to-finish-and-return-exit-code-0
