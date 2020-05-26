@@ -1,0 +1,29 @@
+#!/bin/sh
+
+
+
+# FIRST PART
+printf '\n    running first-code.R \n'
+
+pids=""
+
+for index in {1..3}
+do
+   Rscript first-code.R $index &
+   sleep 1
+   pids="$pids $!"
+done
+
+echo $pids    # just to see the array of pids
+wait $pids    # wait for all pids-jobs are completed.
+
+
+
+# SECOND PART
+printf '\n    running   second-code.R \n'
+
+for index in {1..3}
+do
+   Rscript second-code.R $index &
+   sleep 1
+done
