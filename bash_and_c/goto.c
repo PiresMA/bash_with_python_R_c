@@ -1,4 +1,5 @@
 // goto.c
+// https://docs.microsoft.com/pt-br/cpp/c-language/goto-and-labeled-statements-c?view=msvc-160
 #include <stdio.h>
 
 int main()
