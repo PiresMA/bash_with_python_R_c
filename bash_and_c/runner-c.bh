@@ -1,0 +1,5 @@
+#!/bin/sh
+
+gcc goto.c -o prg1 -O3 -lm
+./prg1 &
+
